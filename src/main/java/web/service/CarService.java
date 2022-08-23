@@ -6,7 +6,7 @@ import web.model.Car;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Service
 public class CarService {
 
     private static int CAR_ID;
