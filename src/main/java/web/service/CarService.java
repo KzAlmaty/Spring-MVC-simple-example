@@ -1,6 +1,6 @@
 package web.service;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import web.model.Car;
 
 import java.util.ArrayList;
@@ -29,15 +29,13 @@ public class CarService {
 
     public List<Car> getCars(int number) {
 
-        List<Car> list = new ArrayList<>();
-
-        for (int i = 0; i < cars().size(); i++) {
-            if (number > i) {
-                list.add(cars.get(i));
-            }
+        if (number > 0 && number <= 5) {
+            return cars.subList(0, number);
+        } else if (number < 0){
+            return null;
+        } else {
+            return cars;
         }
-
-        return list;
 
     }
 
